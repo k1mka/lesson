@@ -1,25 +1,32 @@
-﻿namespace lesson
+﻿using System;
+
+
+namespace lesson
 {
-    partial class Person
+    class MyClass
     {
-        public string FirstName { get; set; }
+        public const double PI = 3.14;
 
-        public string LastName { get; set; }
+        public const string MY_ERROR = "error";
 
-        public Person(string FirstName, string LastName)
+        public MyClass()
         {
-            this.FirstName = FirstName;
-            this.LastName = LastName;
+
         }
 
+        public void Foo()
+        {
+            Console.WriteLine(PI);
+            Console.WriteLine(MY_ERROR);
+        }
     }
 
     internal class Program
     {
         static void Main(string[] args)
         {
-            Person person = new Person("Рома", "Обезьянович");
-            person.PrintFullName();
+            MyClass myClass = new MyClass();
+            myClass.Foo();
         }
     }
 }
