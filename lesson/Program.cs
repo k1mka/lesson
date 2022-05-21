@@ -5,19 +5,20 @@ namespace lesson
 {
     class MyClass
     {
-        public const double PI = 3.14;
+        public string Name { get; set; }
 
-        public const string MY_ERROR = "error";
+        public string lastName { get; set; }
 
         public MyClass()
         {
-
+            this.Name = Name;
+            this.lastName = lastName;
         }
 
         public void Foo()
         {
-            Console.WriteLine(PI);
-            Console.WriteLine(MY_ERROR);
+            Console.WriteLine(Name);
+            Console.WriteLine(lastName);
         }
     }
 
@@ -26,7 +27,21 @@ namespace lesson
         static void Main(string[] args)
         {
             MyClass myClass = new MyClass();
+            myClass.Name = "Артем";
+            myClass.lastName = "Пономаренко";
+
+            MyClass myClass1 = new MyClass
+            {
+                Name = "Жора",
+                lastName = "Откидной"
+            };
             myClass.Foo();
+
+            Console.WriteLine();
+
+            myClass1.Foo();
+
+
         }
     }
 }
